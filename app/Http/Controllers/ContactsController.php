@@ -22,7 +22,7 @@ class ContactsController extends Controller
             $data = contacts::all();
             return view('contacts.contacts-list',['data'=>$data]);
         } else {
-            return route('login');
+            return redirect()->route('login');
         }
     }
 
@@ -35,7 +35,7 @@ class ContactsController extends Controller
         if(session('LoggedUser')){
             return view('contacts.new-contact');
         } else {
-            return route('login');
+            return redirect()->route('login');
         }
      }
 
@@ -59,19 +59,10 @@ class ContactsController extends Controller
         $imgName = str_replace(' ', '',$request->file('image')->getClientOriginalName());
         $path = $request->file('image')->storeAs('public', $imgName);
         $requestData['image'] = "/storage/".$imgName;
+        $requestData['user_id'] = session('LoggedUser');
         $new = contacts::create($requestData);
         $new->save();
 
-
-        // $new = contacts::create([
-        //     'name' => $request->name,
-        //     'image' => $request->image,
-        //     'DOB' => $request->DOB,
-        //     'address' => $request->address,
-        //     'email' => $request->email,
-        //     'phone' => $request->phone,
-        //     'user_id' => session('LoggedUser'),
-        // ]);
 
         if($new){
             return redirect()->back()->with('Success','New Contact Added.');
@@ -115,7 +106,7 @@ class ContactsController extends Controller
         $path = $request->file('image')->storeAs('public', $imgName);
         $requestData['image'] = "/storage/".$imgName;
 
-        $data->image = $requestData;
+        $data->image = $requestData['image'];
         $data->save();
 
         return redirect()->back()->with('Success','Contact has been updated.');
@@ -137,6 +128,6 @@ class ContactsController extends Controller
     public function delete($id){
         $data = contacts::find($id);
         $data->delete();
-        return route('contact_list');
+        return redirect()->route('contact_list');
     }
 }

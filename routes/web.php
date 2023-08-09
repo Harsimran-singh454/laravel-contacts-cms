@@ -27,6 +27,11 @@ Route::any('/registering',[UsersController::class,'register_logic'])->name('regi
 Route::get('/admindashboard',[UsersController::class,'dashboard'])->name('dashboard');
 Route::any('/logout',[UsersController::class,'logout'])->name('logout');
 
+Route::get('/edituser/{id}',[UsersController::class,'editForm'])->name('edit_user_form');
+Route::any('/edituserprocess/{id}',[UsersController::class,'edit'])->name('edit_user');
+Route::get('/deleteuserPage/{id}',[UsersController::class,'deletePage'])->name('user_delete_page');
+Route::any('/deleteuser/{id}',[UsersController::class,'delete'])->name('delete_user');
+
 
 
 

@@ -1,8 +1,16 @@
-@include('layout.header')
+@include('_layout.header')
 
 <h1>New Contact</h1>
-
-<form action="" method="post">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+<form action="{{route('create_contact')}}" method="post" enctype="multipart/form-data">
     @csrf
     <label for="name">Name: </label>
     <input type="text" name="name" value="{{old('name')}}">
@@ -25,4 +33,4 @@
     <input type="submit" value="Add">
 </form>
 
-@include('layout.footer')
+@include('_layout.footer')

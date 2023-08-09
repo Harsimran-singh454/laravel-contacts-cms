@@ -1,9 +1,9 @@
-@include('layout.header')
+@include('_layout.header')
 
 <main>
     <h1>User Registration</h1>
 
-    <form action="" method="post">
+    <form action="{{route('register_logic')}}" method="post">
         @csrf
         <label for="name">Name: </label>
         <input type="text" name="name" value="{{old('name')}}">
@@ -22,7 +22,16 @@
         <input type="submit" value="Register">
     </form>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 </main>
 
-@include('layout.footer')
+@include('_layout.footer')
