@@ -25,6 +25,7 @@
         <input type="password" name="password" >
 
         <input type="hidden" name="role" value="user">
+        <a href="{{route('login')}}">Already have an account? Login.</a>
 
         <input type="submit" value="Register">
     </form>

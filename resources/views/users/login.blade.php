@@ -27,7 +27,7 @@
 
         <label for="password">Password: </label>
         <input type="password" name="password">
-
+        <a href="{{route('register')}}">Dont have an account? Register now.</a>
         <input type="submit" value="Login">
     </form>
 </main>

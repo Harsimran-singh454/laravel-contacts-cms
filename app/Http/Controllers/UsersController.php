@@ -30,7 +30,7 @@ class UsersController extends Controller
             'email' => 'required',
             'password' => 'required|min:8',
         ]);
-
+        $request['password'] = \Hash::make($request->password);
         $data = users::create($request->all());
         if($data){
             return redirect()->back()->with('Success','New User Created');
@@ -118,7 +118,7 @@ class UsersController extends Controller
         ]);
 
         $user = users::where('email',$request->email)->first();
-        if($request->password == $user->password){
+        if (\Hash::check($request->password, $user->password)) {
             if($user->role == "user"){
                 $request->session()->put('LoggedUser',$user->id);
                 return redirect()->route('contact_list');
