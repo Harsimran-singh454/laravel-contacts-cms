@@ -11,6 +11,15 @@
         </ul>
     </div>
     @endif
+
+    @if(session('Success'))
+    <p class="Success">{{session('Success')}}</p>
+    @elseif(session('Fail'))
+    <p class="Fail">{{session('Fail')}}</p>
+    @endif
+
+
+
     <form action="{{route('edit_user',$data->id)}}" method="post">
         @csrf
         <label for="name">Name: </label>
@@ -33,9 +42,6 @@
 
         <input type="submit" value="Register">
     </form>
-
-
-
 </main>
 
 @include('_layout.footer')

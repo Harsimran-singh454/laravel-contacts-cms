@@ -3,6 +3,13 @@
 <main>
     <h1>User Registration</h1>
 
+    @if(session('Success'))
+    <p class="Success">{{session('Success')}}</p>
+    @elseif(session('Fail'))
+    <p class="Fail">{{session('Fail')}}</p>
+    @endif
+
+
     <form action="{{route('register_logic')}}" method="post">
         @csrf
         <label for="name">Name: </label>
@@ -23,15 +30,14 @@
     </form>
 
     @if ($errors->any())
-    <div class="alert alert-danger">
+    <div class="alert">
         <ul>
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
     </div>
-@endif
-
+    @endif
 </main>
 
 @include('_layout.footer')

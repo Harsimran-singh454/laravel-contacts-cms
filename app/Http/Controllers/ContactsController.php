@@ -32,7 +32,7 @@ class ContactsController extends Controller
      */
 
      public function newContactForm(){
-        if(session('LoggedUser')){
+        if(session('LoggedUser') || session('LoggedAdmin')){
             return view('contacts.new-contact');
         } else {
             return redirect()->route('login');
@@ -100,13 +100,14 @@ class ContactsController extends Controller
         $data->email = $request->email;
         $data->phone = $request->phone;
 
+        if($request->image){
+            $requestData = $request->all();
+            $imgName = str_replace(' ', '',$request->file('image')->getClientOriginalName());
+            $path = $request->file('image')->storeAs('public', $imgName);
+            $requestData['image'] = "/storage/".$imgName;
 
-        $requestData = $request->all();
-        $imgName = str_replace(' ', '',$request->file('image')->getClientOriginalName());
-        $path = $request->file('image')->storeAs('public', $imgName);
-        $requestData['image'] = "/storage/".$imgName;
-
-        $data->image = $requestData['image'];
+            $data->image = $requestData['image'];
+        }
         $data->save();
 
         return redirect()->back()->with('Success','Contact has been updated.');

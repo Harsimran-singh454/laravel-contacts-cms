@@ -1,0 +1,661 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Fail{
+    color: white;
+    background-color: #ff0000;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.Success{
+    color: white;
+    background-color: #00ca00;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+header a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header a:hover {
+  color: #ff4081;
+}
+
+
+.hero {
+  background-color: #fce4ec;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.hero h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #ff4081;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e91e63;
+}
+
+/* Styling for features section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 3rem 0;
+  background-color: #f0f8ff;
+}
+
+.feature-item {
+  flex-basis: calc(33.33% - 20px);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0 20px;
+}
+
+.feature-item h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-item p {
+  color: #666;
+}
+
+
+
+/* Styling for footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #ffffff;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+
+
+
+/*** DELETE PAGE **/
+
+.delete-page {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .delete-page h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .delete-page h3 {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .delete-page a {
+    display: inline-block;
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .delete-page a:hover {
+    background-color: #e91e63;
+  }
+
+
+
+
+  /** Edit Page  **/
+
+   .edit-page {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .edit-page h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .edit-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .edit-page label {
+    color: #666;
+    font-size: 1rem;
+  }
+
+  .edit-page input[type="text"],
+  .edit-page input[type="email"],
+  .edit-page input[type="number"],
+  .edit-page input[type="date"],
+  .edit-page input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .edit-page input[type="submit"] {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+
+  .edit-page input[type="submit"]:hover {
+    background-color: #e91e63;
+  }
+
+  .alert {
+    color: #ff0000;
+    margin-bottom: 1rem;
+  }
+
+  .alert ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .alert li {
+    margin-bottom: 0.5rem;
+  }
+
+
+
+
+
+
+  /** New Contact Page **/
+
+
+  .new-contact-page {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .new-contact-page h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .new-contact-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .new-contact-page label {
+    color: #666;
+    font-size: 1rem;
+  }
+
+  .new-contact-page input[type="text"],
+  .new-contact-page input[type="email"],
+  .new-contact-page input[type="number"],
+  .new-contact-page input[type="date"],
+  .new-contact-page input[type="file"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .new-contact-page input[type="submit"] {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+
+  .new-contact-page input[type="submit"]:hover {
+    background-color: #e91e63;
+  }
+
+  .alert {
+    color: #ff0000;
+    margin-bottom: 1rem;
+  }
+
+  .alert ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .alert li {
+    margin-bottom: 0.5rem;
+  }
+
+
+
+
+
+  /** Admin Dashboard  **/
+
+  .admin-dashboard {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .admin-dashboard h1 {
+    color: white;
+    background-color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .admin-dashboard a {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+
+  .admin-dashboard a:hover {
+    background-color: #e91e63;
+  }
+
+  .admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border: none;
+    overflow: scroll;
+  }
+
+  .admin-dashboard th,
+  .admin-dashboard td {
+    padding: 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+
+  }
+
+  .admin-dashboard th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  .admin-dashboard td img {
+    max-width: 24px;
+    vertical-align: middle;
+  }
+
+  .admin-dashboard div{
+    margin: 2em;
+  }
+
+  .admin-dashboard div h2{
+    margin: 1em;
+  }
+
+  .users-table,  .contacts-table{
+  }
+
+
+
+
+  /** Delete Users **/
+  .delete-user {
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  .delete-user h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .delete-user h3 {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .delete-user a {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .delete-user a:hover {
+    background-color: #e91e63;
+  }
+
+
+
+
+ /** Edit Users **/
+
+  main {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  main h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main label {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  main input[type="text"],
+  main input[type="date"],
+  main input[type="email"],
+  main input[type="password"],
+  main select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  main select {
+    cursor: pointer;
+  }
+
+  main input[type="submit"] {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  main input[type="submit"]:hover {
+    background-color: #e91e63;
+  }
+
+
+
+  /** Login Page **/
+
+   main {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  main h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main label {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  main input[type="email"],
+  main input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  main input[type="submit"] {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  main input[type="submit"]:hover {
+    background-color: #e91e63;
+  }
+
+
+
+
+  /** Register Page **/
+
+    main {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+
+  main h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main label {
+    font-weight: bold;
+    margin-top: 1rem;
+    text-align: left;
+    width: 100%;
+  }
+
+  main input[type="text"],
+  main input[type="email"],
+  main input[type="password"],
+  main input[type="date"],
+  main input[type="hidden"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+
+  main input[type="submit"] {
+    background-color: #ff4081;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  main input[type="submit"]:hover {
+    background-color: #e91e63;
+  }
+
+  /* main .alert {
+    color: #ff0000;
+    margin-top: 1rem;
+  } */
+
+
+  /* Contacts Cards **/
+
+.contacts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.contact-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: fit-content;
+    text-align: center;
+}
+
+.contact-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    margin: 5px 0;
+}
+
+.contact-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.contact-card a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.contact-card a:nth-child(3) {
+    color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-card {
+        width: 100%;
+    }
+}
