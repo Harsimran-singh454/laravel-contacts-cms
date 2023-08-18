@@ -67,6 +67,8 @@ class UsersController extends Controller
         $data->DOB = $request->DOB;
         $data->email = $request->email;
         $data->role = $request->role;
+        $request['password'] = \Hash::make($request->password);
+        $data->password = $request['password'];
         $data->save();
 
         return redirect()->back()->with('Success','Contact has been updated.');

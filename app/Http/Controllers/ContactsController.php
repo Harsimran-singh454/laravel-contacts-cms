@@ -59,7 +59,11 @@ class ContactsController extends Controller
         $imgName = str_replace(' ', '',$request->file('image')->getClientOriginalName());
         $path = $request->file('image')->storeAs('public', $imgName);
         $requestData['image'] = "/storage/".$imgName;
-        $requestData['user_id'] = session('LoggedUser');
+        if(session('LoggedUser')){
+            $requestData['user_id'] = session('LoggedUser');
+        } else if(session('LoggedAdmin')){
+            $requestData['user_id'] = session('LoggedAdmin');
+        }
         $new = contacts::create($requestData);
         $new->save();
 

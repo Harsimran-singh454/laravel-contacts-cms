@@ -34,7 +34,6 @@ Route::any('/deleteuser/{id}',[UsersController::class,'delete'])->name('delete_u
 
 
 
-
 /**
  * ************ CONTACTS ROUTES
  */
